@@ -1,3 +1,5 @@
+This fork removes the ambilight functionality. It does not remove it from the settings page so it can still be enabled/disabled but it will not work. I have just commented out some code that i was having issues with. Feel free to use this as and when you want. Original authors readme is below.
+
 script.xbmc.hue.ambilight
 =========================
 
