@@ -379,8 +379,8 @@ def run():
       capture.waitForCaptureStateChangeEvent(1000/60)
       if capture.getCaptureState() == xbmc.CAPTURE_STATE_DONE:
         if player.playingvideo:
-          screen = Screenshot(capture.getImage(), capture.getWidth(), capture.getHeight())
-          hsvRatios = screen.spectrum_hsv(screen.pixels, screen.capture_width, screen.capture_height)
+          #screen = Screenshot(capture.getImage(), capture.getWidth(), capture.getHeight())
+          #hsvRatios = screen.spectrum_hsv(screen.pixels, screen.capture_width, screen.capture_height)
           if hue.settings.light == 0:
             fade_light_hsv(hue.light, hsvRatios[0])
           else:
@@ -427,10 +427,10 @@ def state_changed(state, duration):
         hue.light[2].get_current_setting()
 
     #start capture when playback starts
-    capture_width = 32 #100
-    capture_height = int(capture_width / capture.getAspectRatio())
-    logger.debuglog("capture %s x %s" % (capture_width, capture_height))
-    capture.capture(capture_width, capture_height, xbmc.CAPTURE_FLAG_CONTINUOUS)
+    #capture_width = 32 #100
+    #capture_height = int(capture_width / capture.getAspectRatio())
+    #logger.debuglog("capture %s x %s" % (capture_width, capture_height))
+    #capture.capture(capture_width, capture_height, xbmc.CAPTURE_FLAG_CONTINUOUS)
 
   if state == "started" or state == "resumed":
     if hue.settings.mode == 0 and hue.settings.ambilight_dim: # only if a complete group
